@@ -80,26 +80,20 @@ Installs to the current workspace via the [skills CLI](https://skills.sh). Also 
 
 ### Option 2 — `curl` one-liner
 
-Project scope always installs to `.agents/skills/` (AgentSkills standard). Use `--global --agent <name>` to install to your agent's home directory.
+Works with any [AgentSkills-compatible](https://agentskills.io/specification) agent. Installs to `.agents/skills/` (workspace) — the standard path all agents read from.
 
 ```bash
 # Workspace (current project only)
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash
 
-# Global — Claude Code (~/.claude/skills/)
+# Global (all projects) — use --agent to target a specific agent's home directory
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global --agent claude
-
-# Global — Windsurf (~/.codeium/windsurf/skills/)
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global --agent windsurf
-
-# Global — universal (~/.config/agents/skills/)
-curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global  # universal fallback
 
 # Uninstall
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --uninstall
 ```
-
-Supported `--agent` values (global only): `universal` (default), `claude`, `windsurf`, `augment`, `continue`, `goose`, `roo`, `zencoder`, `kilo`, `junie`, `openhands`
 
 ### Option 3 — `git clone`
 

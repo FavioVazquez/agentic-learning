@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 # install.sh — Install agentic-learning skill
 #
+# Works with any AgentSkills-compatible agent (Cursor, Claude Code, Windsurf,
+# GitHub Copilot, Gemini CLI, Amp, Warp, Cline, and more).
+#
 # Usage:
 #   Workspace (current project):  bash install.sh
 #   Global for specific agent:    bash install.sh --global --agent claude
 #   Uninstall:                    bash install.sh --uninstall [--global] [--agent claude]
 #
-# Project scope always installs to .agents/skills/ (AgentSkills standard).
-# --agent only applies to global installs to pick the right home directory.
+# Project scope installs to .agents/skills/ — the standard path all AgentSkills-
+# compatible agents read from. --agent only needed for global installs.
 #
 # Supported --agent values (global only):
 #   universal (default), claude, windsurf, augment, continue,
