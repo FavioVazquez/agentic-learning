@@ -3,12 +3,14 @@
 #
 # Usage:
 #   Workspace (current project):  bash install.sh
-#   Global (all projects):        bash install.sh --global
-#   Specific agent:               bash install.sh --agent claude
+#   Global for specific agent:    bash install.sh --global --agent claude
 #   Uninstall:                    bash install.sh --uninstall [--global] [--agent claude]
 #
-# Supported --agent values:
-#   universal (default), claude, windsurf, cursor, augment, continue,
+# Project scope always installs to .agents/skills/ (AgentSkills standard).
+# --agent only applies to global installs to pick the right home directory.
+#
+# Supported --agent values (global only):
+#   universal (default), claude, windsurf, augment, continue,
 #   goose, roo, zencoder, kilo, junie, openhands
 
 set -e
@@ -28,62 +30,54 @@ for arg in "$@"; do
   esac
 done
 
-# Resolve install paths per agent
+# Project scope: always .agents/skills/ (AgentSkills standard for all agents)
+WORKSPACE_DIR=".agents/skills/$SKILL_NAME"
+
+# Global scope: agent-specific home directory
 case "$AGENT" in
   universal|amp|cursor|copilot|cline|codex|gemini|warp|opencode|replit)
-    WORKSPACE_DIR=".agents/skills/$SKILL_NAME"
     GLOBAL_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/agents/skills/$SKILL_NAME"
     ;;
   claude|claude-code)
-    WORKSPACE_DIR=".claude/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.claude/skills/$SKILL_NAME"
     ;;
   windsurf)
-    WORKSPACE_DIR=".windsurf/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.codeium/windsurf/skills/$SKILL_NAME"
     ;;
   augment)
-    WORKSPACE_DIR=".augment/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.augment/skills/$SKILL_NAME"
     ;;
   continue)
-    WORKSPACE_DIR=".continue/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.continue/skills/$SKILL_NAME"
     ;;
   goose)
-    WORKSPACE_DIR=".goose/skills/$SKILL_NAME"
     GLOBAL_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/goose/skills/$SKILL_NAME"
     ;;
   roo)
-    WORKSPACE_DIR=".roo/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.roo/skills/$SKILL_NAME"
     ;;
   zencoder)
-    WORKSPACE_DIR=".zencoder/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.zencoder/skills/$SKILL_NAME"
     ;;
   kilo)
-    WORKSPACE_DIR=".kilocode/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.kilocode/skills/$SKILL_NAME"
     ;;
   junie)
-    WORKSPACE_DIR=".junie/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.junie/skills/$SKILL_NAME"
     ;;
   openhands)
-    WORKSPACE_DIR=".openhands/skills/$SKILL_NAME"
     GLOBAL_DIR="$HOME/.openhands/skills/$SKILL_NAME"
     ;;
   *)
     echo "❌ Unknown agent: $AGENT" >&2
-    echo "Supported: universal, claude, windsurf, cursor, augment, continue, goose, roo, zencoder, kilo, junie, openhands" >&2
+    echo "Supported: universal, claude, windsurf, augment, continue, goose, roo, zencoder, kilo, junie, openhands" >&2
     exit 1
     ;;
 esac
 
 if [ "$GLOBAL" = true ]; then
   SKILLS_DIR="$GLOBAL_DIR"
-  SCOPE="global"
+  SCOPE="global ($AGENT)"
 else
   SKILLS_DIR="$(pwd)/$WORKSPACE_DIR"
   SCOPE="workspace"
@@ -93,7 +87,7 @@ fi
 if [ "$UNINSTALL" = true ]; then
   if [ -d "$SKILLS_DIR" ]; then
     rm -rf "$SKILLS_DIR"
-    echo "✅ Uninstalled $SKILL_NAME ($SCOPE, $AGENT)"
+    echo "✅ Uninstalled $SKILL_NAME ($SCOPE)"
   else
     echo "ℹ️  $SKILL_NAME not found at $SKILLS_DIR — nothing to remove"
   fi
@@ -122,7 +116,7 @@ else
 fi
 
 echo ""
-echo "✅ $SKILL_NAME installed ($SCOPE, agent: $AGENT)"
+echo "✅ $SKILL_NAME installed ($SCOPE)"
 echo ""
 echo "Usage: @agentic-learning <action>"
 echo "  learn, quiz, reflect, space, brainstorm, explain-first,"
