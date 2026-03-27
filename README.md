@@ -87,8 +87,8 @@ Works with any [AgentSkills-compatible](https://agentskills.io/specification) ag
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash
 
 # Global (all projects) — use --agent to target a specific agent's home directory
-curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global --agent claude
-curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global --agent windsurf
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global --agent claude    # Claude Code
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global --agent windsurf  # Windsurf
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global  # universal fallback
 
 # Uninstall
@@ -110,7 +110,7 @@ git clone --depth 1 https://github.com/FavioVazquez/agentic-learning ~/.codeium/
 
 ### Compatibility
 
-Works with **Windsurf Cascade** and any [AgentSkills-compatible](https://agentskills.io/specification) agent, including Cursor, Copilot, Amp, Cline, Codex, and Gemini CLI.
+Works with any [AgentSkills-compatible](https://agentskills.io/specification) agent, including Cursor, Claude Code, GitHub Copilot, Gemini CLI, Amp, Warp, Cline, Codex, and Windsurf.
 
 ---
 
