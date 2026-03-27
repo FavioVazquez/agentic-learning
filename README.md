@@ -80,6 +80,8 @@ Installs to the current workspace via the [skills CLI](https://skills.sh). Also 
 
 ### Option 2 — `curl` one-liner
 
+Installs to `.agents/skills/` (universal — works with Cursor, Copilot, Gemini CLI, Amp, Warp, Cline, and more).
+
 ```bash
 # Workspace (current project only)
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash
@@ -87,18 +89,27 @@ curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/
 # Global (all projects)
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global
 
+# Specific agent (e.g. Claude Code, Windsurf, Augment)
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --agent claude
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --agent windsurf
+
 # Uninstall
 curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --uninstall
 ```
 
+Supported `--agent` values: `universal` (default), `claude`, `windsurf`, `cursor`, `augment`, `continue`, `goose`, `roo`, `zencoder`, `kilo`, `junie`, `openhands`
+
 ### Option 3 — `git clone`
 
 ```bash
-# Workspace
-git clone --depth 1 https://github.com/FavioVazquez/agentic-learning .windsurf/skills/agentic-learning
+# Universal (Cursor, Copilot, Gemini CLI, Amp, Warp, Cline, ...)
+git clone --depth 1 https://github.com/FavioVazquez/agentic-learning .agents/skills/agentic-learning
 
-# Global
-git clone --depth 1 https://github.com/FavioVazquez/agentic-learning ~/.codeium/windsurf/skills/agentic-learning
+# Claude Code
+git clone --depth 1 https://github.com/FavioVazquez/agentic-learning .claude/skills/agentic-learning
+
+# Windsurf
+git clone --depth 1 https://github.com/FavioVazquez/agentic-learning .windsurf/skills/agentic-learning
 ```
 
 ### Compatibility
