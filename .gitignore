@@ -1,6 +1,7 @@
 .DS_Store
 *.pyc
 __pycache__/
+.claude
 
 # npx skills install artifacts
 .agents/
@@ -9,4 +10,6 @@ skills-lock.json
 
 # Image generation scripts
 generate_images.py
+requirements.txt
+.venv/
 .env
