@@ -4,10 +4,10 @@
   <p><strong>A learning partner skill for AI coding agents, grounded in neuroscience and philosophy.</strong></p>
 
   <p>
-    <a href="https://github.com/FavioVazquez/agentic-learn/releases"><img src="https://img.shields.io/badge/version-1.1-1b3a57?style=flat-square" alt="version"></a>
+    <a href="https://github.com/FavioVazquez/agentic-learninging/releases"><img src="https://img.shields.io/badge/version-1.1-1b3a57?style=flat-square" alt="version"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-00bcd4?style=flat-square" alt="license"></a>
     <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/AgentSkills-compatible-1b3a57?style=flat-square" alt="AgentSkills compatible"></a>
-    <a href="https://skills.sh/FavioVazquez/agentic-learn"><img src="https://img.shields.io/badge/skills.sh-installable-00bcd4?style=flat-square" alt="skills.sh"></a>
+    <a href="https://skills.sh/FavioVazquez/agentic-learning"><img src="https://img.shields.io/badge/skills.sh-installable-00bcd4?style=flat-square" alt="skills.sh"></a>
     <a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-1b3a57?style=flat-square" alt="code of conduct"></a>
   </p>
 
@@ -73,32 +73,32 @@ Say `more hints` to advance, or `show me` to skip to the full solution at any po
 ### Option 1 — `npx skills` (easiest)
 
 ```bash
-npx skills add FavioVazquez/agentic-learn
+npx skills add FavioVazquez/agentic-learning
 ```
 
-Installs to the current workspace via the [skills CLI](https://skills.sh). Also available at [skills.sh/FavioVazquez/agentic-learn](https://skills.sh/FavioVazquez/agentic-learn).
+Installs to the current workspace via the [skills CLI](https://skills.sh). Also available at [skills.sh/FavioVazquez/agentic-learning](https://skills.sh/FavioVazquez/agentic-learning).
 
 ### Option 2 — `curl` one-liner
 
 ```bash
 # Workspace (current project only)
-curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learn/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash
 
 # Global (all projects)
-curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learn/main/install.sh | bash -s -- --global
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --global
 
 # Uninstall
-curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learn/main/install.sh | bash -s -- --uninstall
+curl -fsSL https://raw.githubusercontent.com/FavioVazquez/agentic-learning/main/install.sh | bash -s -- --uninstall
 ```
 
 ### Option 3 — `git clone`
 
 ```bash
 # Workspace
-git clone --depth 1 https://github.com/FavioVazquez/agentic-learn .windsurf/skills/agentic-learning
+git clone --depth 1 https://github.com/FavioVazquez/agentic-learning .windsurf/skills/agentic-learning
 
 # Global
-git clone --depth 1 https://github.com/FavioVazquez/agentic-learn ~/.codeium/windsurf/skills/agentic-learning
+git clone --depth 1 https://github.com/FavioVazquez/agentic-learning ~/.codeium/windsurf/skills/agentic-learning
 ```
 
 ### Compatibility

@@ -8,7 +8,7 @@
 set -e
 
 SKILL_NAME="agentic-learning"
-REPO="https://github.com/FavioVazquez/agentic-learn"
+REPO="https://github.com/FavioVazquez/agentic-learning"
 GLOBAL=false
 UNINSTALL=false
 
