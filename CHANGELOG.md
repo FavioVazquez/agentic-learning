@@ -7,6 +7,17 @@ Versioning follows [Semantic Versioning](https://semver.org/): `MAJOR.MINOR` —
 
 ---
 
+## [1.4] — 2026-03-27
+
+### Changed
+- Repository renamed from `agentic-learn` to `agentic-learning` — all URLs, badges, and install commands updated for consistency.
+- `install.sh`: rewritten to support all AgentSkills-compatible agents. Project scope always installs to `.agents/skills/` (the AgentSkills standard). `--agent` flag now applies to global installs only, with named shortcuts for Claude Code, Windsurf, Augment, Continue, Goose, Roo, and more.
+- `README.md`: installation section overhauled — Option 2 and Option 3 now show correct paths per scope. Compatibility section leads with AgentSkills rather than Windsurf.
+- `SKILL.md`: compatibility field updated to reflect all supported agents.
+- GitHub repo: description, homepage, topics, and v1.3 release added.
+
+---
+
 ## [1.3] — 2026-03-03
 
 ### Added

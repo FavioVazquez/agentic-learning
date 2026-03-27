@@ -4,7 +4,7 @@
   <p><strong>A learning partner skill for AI coding agents, grounded in neuroscience and philosophy.</strong></p>
 
   <p>
-    <a href="https://github.com/FavioVazquez/agentic-learninging/releases"><img src="https://img.shields.io/badge/version-1.1-1b3a57?style=flat-square" alt="version"></a>
+    <a href="https://github.com/FavioVazquez/agentic-learninging/releases"><img src="https://img.shields.io/badge/version-1.4-1b3a57?style=flat-square" alt="version"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-00bcd4?style=flat-square" alt="license"></a>
     <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/AgentSkills-compatible-1b3a57?style=flat-square" alt="AgentSkills compatible"></a>
     <a href="https://skills.sh/FavioVazquez/agentic-learning"><img src="https://img.shields.io/badge/skills.sh-installable-00bcd4?style=flat-square" alt="skills.sh"></a>

@@ -12,7 +12,7 @@ license: MIT
 compatibility: Works with any AgentSkills-compatible agent — Cursor, Claude Code, Windsurf, GitHub Copilot, Gemini CLI, Amp, Warp, Cline, and more.
 metadata:
   author: favio-vazquez
-  version: "1.3"
+  version: "1.4"
 ---
 
 # Agentic Learning
